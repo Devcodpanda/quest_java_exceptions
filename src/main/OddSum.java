@@ -7,38 +7,40 @@ public class OddSum {
     }
 
     public static int run(String[] args, boolean test) {
-
+           try {
         ArrayList<Integer> listInt = new ArrayList<>();
-        int res;
-        if (!test) {
-            System.out.println("Elements' list :");
-            for (String v : args)
-                System.out.print(" " + v);
-            System.out.println();
-        }
-        for (int i = 0; i < args.length; i++) {
-            listInt.add(Integer.parseInt(args[i]));
-        }
+            int res;
+            if (!test) {
+                System.out.println("Elements' list :");
+                for (String v : args)
+                    System.out.print(" " + v);
+                System.out.println();
+            }
 
-        res = sum(listInt);
-        if (test) {
-            return res;
-        }
+                for (int i = 0; i < args.length; i++) {
+                    listInt.add(Integer.parseInt(args[i]));
+                }
 
-        System.out.println("Sum of odd elements : " + res);
-        System.out.println("END!");
+                res = sum(listInt);
+                if (test) {
+                    return res;
+                }
 
-        return 0;
+                System.out.println("Sum of odd elements : " + res);
+            } catch (Exception e) {
+                return -1;
+            }
+            System.out.println("END!");
+                return 0;
     }
 
     public static int sum(ArrayList<Integer> listInt) {
-
-        int result = 0;
-        for (int value : listInt) {
-            if (value % 2 != 0) {
-                result += value;
+            int result = 0;
+            for (int value : listInt) {
+                if (value % 2 != 0) {
+                    result += value;
+                }
             }
-        }
-        return result;
+            return result;
     }
 }
